@@ -9,14 +9,14 @@ use Illuminate\Pipeline\Pipeline;
 use Dingo\Api\Http\RequestValidator;
 use Dingo\Api\Http\Request as HttpRequest;
 use Dingo\Api\Contract\Debug\ExceptionHandler;
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Container\Container as Application;
 
 class Request
 {
     /**
      * Application instance.
      *
-     * @var \Illuminate\Contracts\Foundation\Application
+     * @var \Illuminate\Container\Container
      */
     protected $app;
 
@@ -51,11 +51,11 @@ class Request
     /**
      * Create a new request middleware instance.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     * @param \Dingo\Api\Contract\Debug\ExceptionHandler   $exception
-     * @param \Dingo\Api\Routing\Router                    $router
-     * @param \Dingo\Api\Http\RequestValidator             $validator
-     * @param array                                        $middleware
+     * @param \Illuminate\Container\Container            $app
+     * @param \Dingo\Api\Contract\Debug\ExceptionHandler $exception
+     * @param \Dingo\Api\Routing\Router                  $router
+     * @param \Dingo\Api\Http\RequestValidator           $validator
+     * @param array                                      $middleware
      *
      * @return void
      */
